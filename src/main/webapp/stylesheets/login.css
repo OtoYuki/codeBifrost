@@ -16,6 +16,13 @@ body {
   width: 100%;
   overflow: hidden;
 }
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .ring {
   position: relative;
   width: 500px;
@@ -72,6 +79,7 @@ body {
   flex-direction: column;
   gap: 20px;
 }
+
 .login h2 {
   font-size: 2em;
   color: #fff;
@@ -79,10 +87,12 @@ body {
 .login .inputBx {
   position: relative;
   width: 100%;
+  
 }
 .login .inputBx input {
   position: relative;
   width: 100%;
+  margin:  10px 0;
   padding: 12px 20px;
   background: transparent;
   border: 2px solid #fff;
@@ -91,6 +101,7 @@ body {
   color: #fff;
   box-shadow: none;
   outline: none;
+  
 }
 .login .inputBx input[type="submit"] {
   width: 100%;
@@ -114,3 +125,4 @@ body {
   color: #fff;
   text-decoration: none;
 }
+
