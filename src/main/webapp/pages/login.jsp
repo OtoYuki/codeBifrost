@@ -38,7 +38,10 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
         </form>
         <div class="links">
           <a href="#">Forget Password</a>
-          <a href="#">Signup</a>
+          <a
+            href="<%=request.getContextPath() + StringUtils.PAGE_URL_REGISTER%>"
+            >Signup</a
+          >
         </div>
       </div>
     </div>

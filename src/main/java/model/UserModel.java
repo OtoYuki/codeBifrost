@@ -8,13 +8,14 @@ public class UserModel {
     private String first_name;
     private String last_name;
     private boolean is_admin;
+    private String phoneNumber;
 
     public UserModel() {
 
     }
 
     public UserModel(int user_id, String username, String email, String password, String first_name, String last_name,
-            boolean is_admin) {
+            boolean is_admin, String phoneNumber) {
         super();
         this.user_id = user_id;
         this.username = username;
@@ -23,6 +24,7 @@ public class UserModel {
         this.first_name = first_name;
         this.last_name = last_name;
         this.is_admin = is_admin;
+        this.phoneNumber = phoneNumber;
     }
 
     public int getUser_id() {
@@ -73,12 +75,20 @@ public class UserModel {
         this.last_name = last_name;
     }
 
-    public boolean isIs_admin() {
+    public boolean getIs_admin() {
         return is_admin;
     }
 
     public void setIs_admin(boolean is_admin) {
         this.is_admin = is_admin;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
 }

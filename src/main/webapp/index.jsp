@@ -14,7 +14,7 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
   <body>
     <jsp:include page="<%=StringUtils.PAGE_URL_HEADER%>" />
-    
+
     <div class="grid">
       <svg
         class="grid-svg"
@@ -148,4 +148,12 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
       </g>
     </svg>
   </body>
+  <script>
+    window.addEventListener("pageshow", function () {
+      document.body.style.animation = "none";
+      setTimeout(function () {
+        document.body.style.animation = "fadeIn 2s ease-in-out";
+      }, 0);
+    });
+  </script>
 </html>

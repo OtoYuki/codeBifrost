@@ -1,4 +1,4 @@
-package servlets;
+package controller.servlets;
 
 import java.io.IOException;
 
@@ -49,19 +49,29 @@ public class LoginServlet extends HttpServlet {
             response.addCookie(userCookie);
 
             request.setAttribute(StringUtils.MESSAGE_SUCCESS, StringUtils.MESSAGE_SUCCESS_LOGIN);
-            response.sendRedirect(request.getContextPath() + StringUtils.PAGE_URL_HOME);
+            // Check if the user is an admin
+            if (databaseController.isAdmin(userName)) {
+                System.out.println("Admin Login");
+                request.getRequestDispatcher(StringUtils.PAGE_URL_ADMIN).forward(request, response);
+            } else {
+                System.out.println("User Login");
+                request.getRequestDispatcher(StringUtils.PAGE_URL_USER).forward(request, response);
+            }
         } else if (loginResult == 0) {
             // Username or Password Missmatch
+            System.out.println("Username or Password Missmatch");
             request.setAttribute(StringUtils.MESSAGE_ERROR, StringUtils.MESSAGE_ERROR_LOGIN);
             request.setAttribute(StringUtils.USERNAME, userName);
             request.getRequestDispatcher(StringUtils.PAGE_URL_HEADER).forward(request, response);
         } else if (loginResult == -1) {
             // Username not Found
+            System.out.println("Username not Found");
             request.setAttribute(StringUtils.MESSAGE_ERROR, StringUtils.MESSAGE_ERROR_CREATE_ACCOUNT);
             request.setAttribute(StringUtils.USERNAME, userName);
             request.getRequestDispatcher(StringUtils.PAGE_URL_HEADER).forward(request, response);
         } else {
             // Server Error
+            System.out.println("Server Error");
             request.setAttribute(StringUtils.MESSAGE_ERROR, StringUtils.MESSAGE_ERROR_SERVER);
             request.setAttribute(StringUtils.USERNAME, userName);
             request.getRequestDispatcher(StringUtils.PAGE_URL_HEADER).forward(request, response);
