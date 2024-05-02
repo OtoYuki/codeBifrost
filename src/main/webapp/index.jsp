@@ -49,17 +49,24 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
     <div class="title">
       <p>Powerful</p>
-      <p>UI Design</p>
+      <p>Roadmap</p>
       <p>Tools</p>
     </div>
 
-    <a href="./pages/login.jsp" class="button first"
-      ><button>Login</button><span></span
-    ></a>
+    <a href="./pages/login.jsp" class="button first">
+      <button style="font-family: 'JetBrains Mono', sans-serif">Login</button
+      ><span></span>
+    </a>
 
-    <a href="#" class="button sec"
-      ><button>Explore Roadmaps</button><span></span
-    ></a>
+    <a href="#" class="button sec">
+      <button style="font-family: Arial, sans-serif">Explore Roadmaps</button
+      ><span></span>
+    </a>
+
+    <a href="#" class="button third">
+      <button style="font-family: Arial, sans-serif">About Us</button
+      ><span></span>
+    </a>
 
     <a href="#" class="button third"><button>About Us</button><span></span></a>
 
