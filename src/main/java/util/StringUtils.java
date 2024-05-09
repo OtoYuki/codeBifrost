@@ -54,7 +54,7 @@ public class StringUtils {
     // End: Validation Messages
 
     // Start Servlet Routes
-    public static final String SERVLET_URL_LOGIN = "/login";
+    public static final String SERVLET_URL_LOGIN = "/loginuser";
     public static final String SERVLET_URL_REGISTER = "/register";
     // End Servlet Routes
 

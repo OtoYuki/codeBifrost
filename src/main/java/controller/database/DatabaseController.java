@@ -36,7 +36,7 @@ public class DatabaseController {
             stmt.setString(5, user.getEmail());
             stmt.setString(6, PasswordEncryptionWithAes.encrypt(user.getUsername(), user.getPassword()));
             stmt.setBoolean(7, user.getIs_admin());
-            stmt.setString(8, user.getPhoneNumber());
+            stmt.setString(8, user.getPhonenumber());
 
             // Execute the Update Statement and Store the Number of Rows Affected
             int result = stmt.executeUpdate();

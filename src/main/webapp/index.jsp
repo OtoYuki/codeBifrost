@@ -14,7 +14,6 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
   <body>
     <jsp:include page="<%=StringUtils.PAGE_URL_HEADER%>" />
-
     <div class="grid">
       <svg
         class="grid-svg"
@@ -59,16 +58,16 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     </a>
 
     <a href="#" class="button sec">
-      <button style="font-family: Arial, sans-serif">Explore Roadmaps</button
+      <button style="font-family: 'JetBrains Mono', sans-serif">Explore Roadmaps</button
       ><span></span>
     </a>
 
     <a href="#" class="button third">
-      <button style="font-family: Arial, sans-serif">About Us</button
+      <button style="font-family: 'JetBrains Mono', sans-serif">About Us</button
       ><span></span>
     </a>
 
-    <a href="#" class="button third"><button>About Us</button><span></span></a>
+    
 
     <svg
       class="top-right"

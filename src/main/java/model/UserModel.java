@@ -83,11 +83,11 @@ public class UserModel {
         this.is_admin = is_admin;
     }
 
-    public String getPhoneNumber() {
+    public String getPhonenumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhonenumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
