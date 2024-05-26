@@ -1,11 +1,22 @@
 package controller.servlets;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+
+import org.apache.commons.io.IOUtils;
 
 import controller.database.DatabaseController;
 import model.UserModel;
@@ -23,7 +34,10 @@ import util.StringUtils;
  * @since 2024-05-01
  */
 
-@WebServlet(asyncSupported = true, urlPatterns = { StringUtils.SERVLET_URL_REGISTER })
+@WebServlet(urlPatterns = { StringUtils.SERVLET_URL_REGISTER }, asyncSupported = true)
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
+		maxFileSize = 1024 * 1024 * 10, // 10MB
+		maxRequestSize = 1024 * 1024 * 50) // 50MB
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final DatabaseController databaseController;
@@ -48,21 +62,32 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String username = request.getParameter(StringUtils.USERNAME);
+		request.setCharacterEncoding("UTF-8");
+
+		// Extract user data from the request
+		String username = IOUtils.toString(request.getPart(StringUtils.USERNAME).getInputStream(),
+				StandardCharsets.UTF_8);
 		System.out.println("Username: " + username);
-		String firstName = request.getParameter(StringUtils.FIRSTNAME);
+		String firstName = IOUtils.toString(request.getPart(StringUtils.FIRSTNAME).getInputStream(),
+				StandardCharsets.UTF_8);
 		System.out.println("First Name: " + firstName);
-		String lastName = request.getParameter(StringUtils.LASTNAME);
+		String lastName = IOUtils.toString(request.getPart(StringUtils.LASTNAME).getInputStream(),
+				StandardCharsets.UTF_8);
 		System.out.println("Last Name: " + lastName);
-		String email = request.getParameter(StringUtils.EMAIL);
+		String email = IOUtils.toString(request.getPart(StringUtils.EMAIL).getInputStream(), StandardCharsets.UTF_8);
 		System.out.println("Email: " + email);
-		String password = request.getParameter(StringUtils.PASSWORD);
+		String password = IOUtils.toString(request.getPart(StringUtils.PASSWORD).getInputStream(),
+				StandardCharsets.UTF_8);
 		System.out.println("Password: " + password);
-		String phoneNumber = request.getParameter(StringUtils.PHONENUMBER);
+		String phoneNumber = IOUtils.toString(request.getPart(StringUtils.PHONENUMBER).getInputStream(),
+				StandardCharsets.UTF_8);
 		System.out.println("Phone Number: " + phoneNumber);
+		String profilePicturePath = IOUtils.toString(request.getPart(StringUtils.PROFILEPICTURE).getInputStream(),
+				StandardCharsets.UTF_8);
 
 		// Create a UserModel object with the extracted data
-		UserModel user = new UserModel(0, username, email, password, firstName, lastName, false, phoneNumber);
+		UserModel user = new UserModel(0, username, email, password, firstName, lastName, false, phoneNumber,
+				profilePicturePath);
 
 		// Data Validation
 
@@ -70,7 +95,6 @@ public class RegisterServlet extends HttpServlet {
 		int result = databaseController.registerUser(user);
 		System.out.println("Result: " + result);
 
-		// Check the result of the registration
 		// Check the result of the registration
 		if (result == 1) {
 			// Registration Successful

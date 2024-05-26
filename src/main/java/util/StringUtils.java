@@ -12,10 +12,17 @@ public class StringUtils {
 
     // Start SQL Queries
     public static final String QUERY_REGISTER_USER = "INSERT INTO users ("
-            + "user_id, username, first_name, last_name, email, password, is_admin, phonenumber)"
-            + " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            + "user_id, username, first_name, last_name, email, password, is_admin, phonenumber, profile_picture)"
+            + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     public static final String QUERY_LOGIN_USER_CHECK = "SELECT * FROM users WHERE username = ?";
     public static final String QUERY_ADMIN_CHECK = "SELECT * FROM users WHERE username = ? AND is_admin = 1";
+    public static final String QUERY_GET_ALL_USERS = "SELECT * FROM users";
+    public static final String QUERY_GET_USER_COUNT = "SELECT COUNT(*) FROM users";
+    public static final String QUERY_DELETE_USER = "DELETE FROM users WHERE username = ?";
+    public static final String QUERY_UPDATE_USER = "UPDATE users SET first_name = ?, last_name = ?, email = ?, phonenumber = ? WHERE username = ?";
+    public static final String QUERY_GET_USER = "SELECT * FROM users WHERE username = ?";
+    public static final String QUERY_GET_ALL_ROADMAPS = "SELECT * FROM roadmaps";
+    public static final String QUERY_ADD_ROADMAP = "INSERT INTO roadmaps (title, description, skill_level, image_path) VALUES (?, ?, ?, ?)";
     // End SQL Queries
 
     // Start Parameter Names
@@ -27,7 +34,12 @@ public class StringUtils {
     public static final String PASSWORD = "password";
     public static final String ISADMIN = "isAdmin";
     public static final String PHONENUMBER = "phoneNumber";
+    public static final String PROFILEPICTURE = "profilePicture";
     // End Parameter Names
+
+    // Start Messages
+    public static final String MESSAGE_SUCCESS_UPDATE = "Successfully Updated!";
+    public static final String MESSAGE_ERROR_UPDATE = "Update Failed. Please try again.";
 
     // Start: Validation Messages
     // Register Page Messages
@@ -55,10 +67,20 @@ public class StringUtils {
 
     // Start Servlet Routes
     public static final String SERVLET_URL_LOGIN = "/loginuser";
-    public static final String SERVLET_URL_REGISTER = "/register";
+    public static final String SERVLET_URL_REGISTER = "/registeruser";
+    public static final String SERVLET_URL_ADMIN = "/admin";
+    public static final String SERVLET_URL_MODIFY_USER = "/modifyuser";
+    public static final String SERVLET_URL_UPDATE_USER = "/updateuser";
+    public static final String SERVLET_URL_RESOURCES = "/resourcesservlet";
+    public static final String SERVLET_URL_HOME = "/home";
+    public static final String SERVLET_URL_PROFILE = "/profile";
+    public static final String SERVLET_URL_ENROLL = "/enroll";
+    public static final String SERVLET_URL_ADD_ROADMAP = "/addroadmap";
+    public static final String SERVLET_URL_MODIFY_ROADMAP = "/modifyroadmap";
     // End Servlet Routes
 
     // Start JSP Routes
+    public static final String PAGE_URL_INDEX = "index.jsp";
     public static final String PAGE_URL_HOME = "/pages/userhome.jsp";
     public static final String PAGE_URL_HEADER = "/pages/header.jsp";
     public static final String PAGE_URL_NAV = "/pages/nav.jsp";
@@ -66,5 +88,18 @@ public class StringUtils {
     public static final String PAGE_URL_REGISTER = "/pages/register.jsp";
     public static final String PAGE_URL_ADMIN = "/pages/admindashboard.jsp";
     public static final String PAGE_URL_USER = "/pages/userhome.jsp";
+    public static final String PAGE_URL_UPDATE = "/pages/update.jsp";
+    public static final String PAGE_URL_RESOURCES = "/pages/resources.jsp";
+    public static final String PAGE_URL_PROFILE = "/pages/profile.jsp";
     // End JSP Routes
+
+    // Normal Text
+    public static final String USER_COUNT = "totalUsers";
+    public static final String USER_LIST = "userList";
+    public static final String DELETE_ID = "deleteId";
+    public static final String UPDATE_ID = "updateId";
+    public static final String ROADMAP_LIST = "roadmapList";
+
+    // Image Directory Path
+    public static final String RESOURCE_IMG_DIR = "/resources/images/resource_img";
 }

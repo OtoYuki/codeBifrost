@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+<%@page import="util.StringUtils" %><%@ page language="java"
+contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,13 +14,31 @@ pageEncoding="UTF-8"%>
   </head>
   <body>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Menu</a>
-      <a href="#" class="current">Gallery</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-      <div class="nav-underline"></div>
-      <div class="nav-underline2"></div>
+      <ul>
+        <li>
+          <a
+            href="<%=request.getContextPath() + StringUtils.SERVLET_URL_HOME%> "
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="<%=request.getContextPath() + StringUtils.SERVLET_URL_RESOURCES%>"
+            >Roadmaps</a
+          >
+        </li>
+        <li>
+          <a href="<%=request.getContextPath()  + StringUtils.PAGE_URL_LOGIN%>"
+            >Login</a
+          >
+        </li>
+        <li>
+          <a
+            href="<%=request.getContextPath()  + StringUtils.SERVLET_URL_PROFILE%>"
+            >Profile</a
+          >
+        </li>
+      </ul>
     </nav>
   </body>
 </html>

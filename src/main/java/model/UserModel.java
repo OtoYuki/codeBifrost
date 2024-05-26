@@ -9,13 +9,14 @@ public class UserModel {
     private String last_name;
     private boolean is_admin;
     private String phoneNumber;
+    private String profilePicturePath;
 
     public UserModel() {
 
     }
 
     public UserModel(int user_id, String username, String email, String password, String first_name, String last_name,
-            boolean is_admin, String phoneNumber) {
+            boolean is_admin, String phoneNumber, String profilePicturePath) {
         super();
         this.user_id = user_id;
         this.username = username;
@@ -25,6 +26,7 @@ public class UserModel {
         this.last_name = last_name;
         this.is_admin = is_admin;
         this.phoneNumber = phoneNumber;
+        this.profilePicturePath = profilePicturePath;
     }
 
     public int getUser_id() {
@@ -83,12 +85,20 @@ public class UserModel {
         this.is_admin = is_admin;
     }
 
-    public String getPhonenumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhonenumber(String phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getProfilePicturePath() {
+        return profilePicturePath;
+    }
+
+    public void setProfilePicturePath(String profilePicturePath) {
+        this.profilePicturePath = profilePicturePath;
     }
 
 }

@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+  --font-sans: "JetBrains Mono", monospace;
+  --font-serif: "JetBrains Mono", serif;
+  --background-color: #333;
+  --text-color: #f3f3f3;
+}
+
+body {
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-container {
+    display: grid;
+    grid-gap: 1rem;
+    padding: 1rem;
+    max-width: 1024px;
+    min-width: 600px; 
+    margin: 20px auto;
+    font-family: var(--font-sans);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container h2 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.profile-container p {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    font-style: italic;
+    line-height: 1.35;
+}
+
+.profile-container form {
+    margin-top: 20px;
+    display: flex; /* Make the form a flex container */
+    justify-content: center; /* Center the buttons horizontally */
+}
+
+.profile-container input[type="submit"], .profile-container input[type="button"] {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 0.025rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    margin-right: 10px; /* Add some space between the buttons */
+}
+
+.profile-container input[type="submit"]:hover, .profile-container input[type="button"]:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.profile-container input[type="submit"]:focus, .profile-container input[type="button"]:focus {
+    outline: 1px dashed yellow;
+    outline-offset: 3px;
+}

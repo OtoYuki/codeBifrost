@@ -1,18 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-        
+                    
+    
+    
+    
     <wb-module deploy-name="codeBifrost">
-                
+                                        
+        
+        
+        
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-                
+                                        
+        
+        
+        
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+                                
+        
+        
         <dependent-module archiveName="mysql-connector-j-8.3.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/Q:/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0.jar">
+                                                
+            
+            
             <dependency-type>uses</dependency-type>
+                                            
+        
+        
         </dependent-module>
                 
-        <property name="context-root" value="codeBifrost"/>
+        <dependent-module archiveName="taglibs-standard-impl-1.2.5.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/Z:/Jars/taglibs1.2.5_567c6956-9a6d-4a34-9850-84357918438a_93445_/taglibs-standard-impl-1.2.5.jar">
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
                 
+        <dependent-module archiveName="taglibs-standard-spec-1.2.5.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/Z:/Jars/taglibs1.2.5_567c6956-9a6d-4a34-9850-84357918438a_93445_/taglibs-standard-spec-1.2.5.jar">
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
+        <dependent-module archiveName="commons-io-2.16.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/Z:/Jars/commons-io-2.16.1-bin/commons-io-2.16.1/commons-io-2.16.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+                                        
+        
+        
+        
+        <property name="context-root" value="codeBifrost"/>
+                                        
+        
+        
+        
         <property name="java-output-path" value="/codeBifrost/build/classes"/>
-            
-    </wb-module>
+                                    
     
+    
+    
+    </wb-module>
+                
+
+
+
 </project-modules>

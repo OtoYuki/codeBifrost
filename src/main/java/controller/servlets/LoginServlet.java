@@ -52,10 +52,10 @@ public class LoginServlet extends HttpServlet {
             // Check if the user is an admin
             if (databaseController.isAdmin(userName)) {
                 System.out.println("Admin Login");
-                request.getRequestDispatcher(StringUtils.PAGE_URL_ADMIN).forward(request, response);
+                request.getRequestDispatcher(StringUtils.SERVLET_URL_ADMIN).forward(request, response);
             } else {
                 System.out.println("User Login");
-                request.getRequestDispatcher(StringUtils.PAGE_URL_USER).forward(request, response);
+                request.getRequestDispatcher(StringUtils.SERVLET_URL_HOME).forward(request, response);
             }
         } else if (loginResult == 0) {
             // Username or Password Missmatch

@@ -14,6 +14,7 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
   <body>
     <jsp:include page="<%=StringUtils.PAGE_URL_HEADER%>" />
+    <jsp:include page="<%=StringUtils.PAGE_URL_NAV%>" />
     <div class="grid">
       <svg
         class="grid-svg"
@@ -57,17 +58,19 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
       ><span></span>
     </a>
 
-    <a href="#" class="button sec">
-      <button style="font-family: 'JetBrains Mono', sans-serif">Explore Roadmaps</button
+    <a
+      href="<%=request.getContextPath() + StringUtils.SERVLET_URL_RESOURCES%>"
+      class="button sec"
+    >
+      <button style="font-family: 'JetBrains Mono', sans-serif">
+        Explore Roadmaps</button
       ><span></span>
     </a>
 
-    <a href="#" class="button third">
-      <button style="font-family: 'JetBrains Mono', sans-serif">About Us</button
+    <a href="./pages/register.jsp" class="button third">
+      <button style="font-family: 'JetBrains Mono', sans-serif">Register</button
       ><span></span>
     </a>
-
-    
 
     <svg
       class="top-right"
